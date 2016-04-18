@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Course-WIKI</string>
+    <string name="action_settings">Settings</string>
+    <string name="sign_in">Sign in</string>
+</resources>
