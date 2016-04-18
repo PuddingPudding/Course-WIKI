@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">選課WIKI</string>
+    <string name="action_settings">設定</string>
+    <string name="sign_in">登入</string>
+</resources>
