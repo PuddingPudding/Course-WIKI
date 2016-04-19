@@ -10,8 +10,8 @@
     <string name="personal_data">profile</string>
     <string name="change_password">change</string>
     <string name="log_out">Log out</string>
-    <string name="teacher_rank">Teacher's score</string>
-    <string name="teacher_schedule">Teacher's schedule</string>
+    <string name="teacher_rank">Teacher score</string>
+    <string name="teacher_schedule">Teacher schedule</string>
     <string name="student_chat">Student discuss</string>
     <string name="book_search">Book search</string>
 </resources>

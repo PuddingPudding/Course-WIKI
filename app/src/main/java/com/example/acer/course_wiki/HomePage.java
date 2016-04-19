@@ -8,24 +8,39 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
 
 public class HomePage extends AppCompatActivity {
 
+    Button logInBtn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        pageSetHomePage();
+
+    }
+
+    private void pageSetHomePage()
+    {
         setContentView(R.layout.activity_home_page);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        logInBtn = (Button)findViewById(R.id.logInBtn);
+        logInBtn.setOnClickListener(goToMainPage);
+    }
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+    public View.OnClickListener goToMainPage = new View.OnClickListener()
+    {
+        @Override
+        public void onClick(View v)
+        {
+            pageSetMainPage();
+        }
+    };
+
+    public void pageSetMainPage()
+    {
+        setContentView(R.layout.activity_main_page);
     }
 
     @Override

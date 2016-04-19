@@ -5,6 +5,7 @@
     <string name="ID">學號</string>
     <string name="password">密碼</string>
     <string name="forget_password">忘記密碼?</string>
+    <string name="title_activity_main_page">主頁</string>
     <string name="welcome">歡迎登入</string>
     <string name="change_password">更改密碼</string>
     <string name="personal_data">個人資料</string>
