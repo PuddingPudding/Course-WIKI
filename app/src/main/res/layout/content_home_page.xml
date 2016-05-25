@@ -16,7 +16,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/app_name"
-        android:id="@+id/button"
+        android:id="@+id/BT_Refresh"
         android:layout_marginTop="34dp"
         android:textSize="35sp"
         android:layout_alignParentTop="true"
@@ -29,7 +29,7 @@
         android:id="@+id/textView"
         android:layout_marginTop="34dp"
         android:textSize="30sp"
-        android:layout_below="@+id/button"
+        android:layout_below="@+id/BT_Refresh"
         android:layout_centerHorizontal="true" />
 
     <TextView
@@ -39,8 +39,8 @@
         android:id="@+id/textView2"
         android:textSize="23sp"
         android:layout_below="@+id/textView"
-        android:layout_toLeftOf="@+id/button"
-        android:layout_toStartOf="@+id/button" />
+        android:layout_toLeftOf="@+id/BT_Refresh"
+        android:layout_toStartOf="@+id/BT_Refresh" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -58,7 +58,7 @@
         android:layout_width="150sp"
         android:layout_height="40sp"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:id="@+id/textView4"
+        android:id="@+id/ET_IDinput"
         android:layout_alignBottom="@+id/textView2"
         android:layout_centerHorizontal="true" />
 
@@ -66,7 +66,7 @@
         android:layout_width="150sp"
         android:layout_height="40sp"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:id="@+id/editText"
+        android:id="@+id/ET_PWDinput"
         android:layout_alignBottom="@+id/textView3"
         android:layout_centerHorizontal="true" />
 
@@ -74,20 +74,20 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/log_in"
-        android:id="@+id/logInBtn"
-        android:layout_below="@+id/editText"
-        android:layout_toEndOf="@+id/editText"
+        android:id="@+id/BT_LogIn"
+        android:layout_below="@+id/ET_PWDinput"
+        android:layout_toEndOf="@+id/ET_PWDinput"
         android:textSize="25sp"
-        android:layout_toRightOf="@+id/editText" />
+        android:layout_toRightOf="@+id/ET_PWDinput" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/forget_password"
-        android:id="@+id/button3"
+        android:id="@+id/BT_Forget"
         android:textSize="25sp"
         android:layout_marginTop="36dp"
-        android:layout_below="@+id/logInBtn"
-        android:layout_alignLeft="@+id/editText"
-        android:layout_alignStart="@+id/editText" />
+        android:layout_below="@+id/BT_LogIn"
+        android:layout_alignLeft="@+id/ET_PWDinput"
+        android:layout_alignStart="@+id/ET_PWDinput" />
 </RelativeLayout>
