@@ -16,7 +16,7 @@ public class courseOpenHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db){
         db.execSQL("create table " +
-                courseDB.COURSETABLE + "(title, body);");
+                courseDB.COURSETABLE + "(courseName,courseID,courseScore,teacher,score);");
     }
 
     @Override
