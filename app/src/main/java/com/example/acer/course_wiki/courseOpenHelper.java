@@ -22,5 +22,8 @@ public class courseOpenHelper extends SQLiteOpenHelper {
     }
 
     @Override
-    public void onUpgrade(SQLiteDatabase db,int oldV,int newV){}
+    public void onUpgrade(SQLiteDatabase db,int oldV,int newV)
+    {
+
+    }
 }
