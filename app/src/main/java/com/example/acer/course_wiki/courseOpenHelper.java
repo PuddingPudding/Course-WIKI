@@ -13,10 +13,12 @@ public class courseOpenHelper extends SQLiteOpenHelper {
         super(context,"note.db",null,1);
     }
 
+    public static final String TABLE_NAME = "courseTable";
+
     @Override
     public void onCreate(SQLiteDatabase db){
         db.execSQL("create table " +
-                courseDB.COURSETABLE + "(courseName,courseID,courseScore,teacher,score);");
+                TABLE_NAME + "(courseName,courseID,courseScore,teacher,score);");
     }
 
     @Override
