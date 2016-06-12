@@ -9,7 +9,7 @@ import android.database.sqlite.SQLiteOpenHelper;
  */
 public class commentOpenHelper extends SQLiteOpenHelper
 {
-    
+
     public commentOpenHelper(Context context)
     {
         super(context,"note.db",null,1);
