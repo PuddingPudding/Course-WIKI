@@ -27,7 +27,7 @@ public class commentDB
             strTemp = databasePtr.getString(databasePtr.getColumnIndex("courseID"));
             if(courseID.equals(strTemp) == true)
             {
-                commentList.add
+
             }
             databasePtr.moveToNext();
         }
