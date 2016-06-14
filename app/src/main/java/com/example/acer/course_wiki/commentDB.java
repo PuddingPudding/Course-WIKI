@@ -37,6 +37,7 @@ public class commentDB
                 comment = databasePtr.getString(databasePtr.getColumnIndex("comment") );
                 givingRank = databasePtr.getDouble(databasePtr.getColumnIndex("givingRank") );
                 commentCredibility = databasePtr.getDouble(databasePtr.getColumnIndex("commentCredibility") );
+
                 commentList.add(new commentClass(ID , comment , givingRank , commentCredibility) );
             }
             databasePtr.moveToNext();
