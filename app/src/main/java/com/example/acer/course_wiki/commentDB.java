@@ -12,6 +12,8 @@ public class commentDB
 {
     public static final String TABLE_NAME = "commentTable";
 
+//    靜態函數 getCommentList:獲得一串資料，這一串資料用於顯示評論時使用
+
 
     public static ArrayList<commentClass> getCommentList(SQLiteDatabase database , String courseID)
     {
@@ -41,6 +43,5 @@ public class commentDB
         }
 
         return commentList;
-
     }
 }
