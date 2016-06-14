@@ -1,5 +1,6 @@
 package com.example.acer.course_wiki;
 
+import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
@@ -11,6 +12,9 @@ import java.util.ArrayList;
 public class memberDB
 {
     public static String TABLE_NAME = "memberTable";
+
+//    靜態函數 getMemberList:會回傳所有人的資料，該資料用於檢查用
+//    靜態函數 addMember:新增member用，會回傳這個人是否已經存在，已存在則不新增並回傳true，不存則相反
 
     public static ArrayList<memberClass> getMemberList(SQLiteDatabase database)
     {
@@ -37,4 +41,35 @@ public class memberDB
 
         return memberList;
     }
+
+    public static boolean addMember(SQLiteDatabase database , String name , String ID , String password , String identity)
+    {
+        ArrayList<memberClass> memberList = getMemberList(database);
+        boolean exist = false; //exist代表是否已存在，先假設他不存在
+        String IDTemp = "";
+
+        int i = 0;
+        for(i = 0 ; i < memberList.size() && exist == false ; i++)
+        {
+            IDTemp = memberList.get(i).getID();
+            if(ID.equals(IDTemp) == true)
+            {
+                exist = true;
+            }
+        }
+
+        if(exist == false)
+        {
+            ContentValues input = new ContentValues();
+            input.put("name" , name);
+            input.put("ID" , ID);
+            input.put("password" , password);
+            input.put("identity" , identity);
+
+            database.insert(TABLE_NAME , null , input);
+        }
+
+        return exist;
+    }
+
 }

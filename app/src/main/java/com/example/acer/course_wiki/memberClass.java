@@ -24,4 +24,10 @@ public class memberClass
         this.password = "";
         this.identity = "S";
     }
+
+    public String getID()
+    {
+        return this.ID;
+    }
+
 }
