@@ -15,4 +15,8 @@
     <string name="student_chat">Student discuss</string>
     <string name="book_search">Book search</string>
     <string name="course_list">Course List</string>
+    <string name="member_name">name:</string>
+    <string name="member_ID">ID:</string>
+    <string name="member_password">password:</string>
+    <string name="member_identity">identity:</string>
 </resources>
