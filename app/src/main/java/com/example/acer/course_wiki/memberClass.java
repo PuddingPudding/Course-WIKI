@@ -25,9 +25,24 @@ public class memberClass
         this.identity = "S";
     }
 
+    public String getname()
+    {
+        return this.name;
+    }
+
     public String getID()
     {
         return this.ID;
+    }
+
+    public String getpassword()
+    {
+        return this.password;
+    }
+
+    public String getidentity()
+    {
+        return this.identity;
     }
 
 }
