@@ -16,4 +16,9 @@
     <string name="book_search">書本查詢</string>
     <string name="course_list">課程列表</string>
     <string name="add_member">新增成員</string>
+    <string name="member_name">姓名:</string>
+    <string name="member_ID">學號:</string>
+    <string name="member_password">密碼:</string>
+    <string name="member_identity">身分:</string>
+    <string name="asking_for_identity">身分 (請填入S或T)</string>
 </resources>
