@@ -15,4 +15,5 @@
     <string name="student_chat">學生討論區</string>
     <string name="book_search">書本查詢</string>
     <string name="course_list">課程列表</string>
+    <string name="add_member">新增成員</string>
 </resources>
