@@ -52,7 +52,7 @@ public class memberDB
         for(i = 0 ; i < memberList.size() && exist == false ; i++)
         {
             IDTemp = memberList.get(i).getID();
-            if(ID.equals(IDTemp) == true)
+            if(ID.toUpperCase().equals(IDTemp) == true)
             {
                 exist = true;
             }
@@ -62,7 +62,7 @@ public class memberDB
         {
             ContentValues input = new ContentValues();
             input.put("name" , name);
-            input.put("ID" , ID);
+            input.put("ID" , ID.toUpperCase() );
             input.put("password" , password);
             input.put("identity" , identity);
 

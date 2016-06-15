@@ -1,5 +1,6 @@
 package com.example.acer.course_wiki;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -46,7 +47,9 @@ public class HomePage extends AppCompatActivity {
         @Override
         public void onClick(View v)
         {
-
+            Intent intent = new Intent();
+            intent.setClass(HomePage.this , AddMemberPage.class);
+            startActivity(intent);
         }
     };
 

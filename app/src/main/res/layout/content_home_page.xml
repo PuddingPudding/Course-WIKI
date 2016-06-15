@@ -81,15 +81,14 @@
         android:layout_toRightOf="@+id/ET_PWDinput" />
 
     <Button
-        android:layout_width="wrap_content"
+        android:layout_width="200sp"
         android:layout_height="wrap_content"
-        android:text="@string/forget_password"
+        android:text="@string/meber_list"
         android:id="@+id/BT_Forget"
         android:textSize="25sp"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="41dp"
         android:layout_below="@+id/BT_LogIn"
-        android:layout_alignLeft="@+id/ET_PWDinput"
-        android:layout_alignStart="@+id/ET_PWDinput" />
+        android:layout_centerHorizontal="true" />
 
     <Button
         android:layout_width="wrap_content"

@@ -21,4 +21,8 @@
     <string name="member_password">password:</string>
     <string name="member_identity">identity:</string>
     <string name="asking_for_identity">identity (please type S or T)</string>
+    <string name="meber_list">Member List</string>
+    <string name="blank_empty">You forget something</string>
+    <string name="ID_exist_already">This ID has been used</string>
+    <string name="error">ERROR!</string>
 </resources>
