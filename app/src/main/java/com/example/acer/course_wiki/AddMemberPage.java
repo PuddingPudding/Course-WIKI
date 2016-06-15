@@ -49,9 +49,10 @@ public class AddMemberPage extends AppCompatActivity
         }
         else if(identity.toUpperCase().equals("S") || identity.toUpperCase().equals("T") )
         {
-            if(memberDB.addMember(memberDatabase , name , ID.toUpperCase() , password , identity.toUpperCase() ) == true)
+            boolean flag = memberDB.addMember(memberDatabase , name , ID.toUpperCase() , password , identity.toUpperCase() );
+            if(flag == true)
             {
-                //addMember會回傳這個學號(ID)是否已存在，已存在就不做事並回傳true，以下做已存在的處理
+                //addMember會回傳這個學號(ID)是否已存在，已存在就不做事並回傳true，以下顯示學號已存在的警告訊息
                 Toast.makeText(this , R.string.ID_exist_already , Toast.LENGTH_LONG).show();
             }
         }

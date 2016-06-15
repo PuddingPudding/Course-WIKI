@@ -9,10 +9,13 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
 
+import java.lang.reflect.Member;
+
 public class HomePage extends AppCompatActivity {
 
     Button logInBtn;
     Button bt_addMember;
+    Button bt_memberList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +34,9 @@ public class HomePage extends AppCompatActivity {
 
         bt_addMember = (Button)findViewById(R.id.BT_AddMember);
         bt_addMember.setOnClickListener(goToAddMemberPage);
+
+        bt_memberList = (Button)findViewById(R.id.BT_MemberList);
+        bt_memberList.setOnClickListener(goToMemberListPage);
     }
 
     public View.OnClickListener goToMainPage = new View.OnClickListener()
@@ -49,6 +55,17 @@ public class HomePage extends AppCompatActivity {
         {
             Intent intent = new Intent();
             intent.setClass(HomePage.this , AddMemberPage.class);
+            startActivity(intent);
+        }
+    };
+
+    public View.OnClickListener goToMemberListPage = new View.OnClickListener()
+    {
+        @Override
+        public void onClick(View v)
+        {
+            Intent intent = new Intent();
+            intent.setClass(HomePage.this , MemberListPage.class);
             startActivity(intent);
         }
     };
@@ -73,7 +90,8 @@ public class HomePage extends AppCompatActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.action_settings)
+        {
             return true;
         }
 

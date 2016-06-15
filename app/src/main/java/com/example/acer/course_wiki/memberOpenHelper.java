@@ -9,14 +9,14 @@ import android.database.sqlite.SQLiteOpenHelper;
  */
 public class memberOpenHelper extends SQLiteOpenHelper {
 
-    public memberOpenHelper (Context context){super(context , "note.db" , null , 1);}
+    public memberOpenHelper (Context context){super(context , "member.db" , null , 1);}
 
     public static final String TABLE_NAME = "memberTable";
 
     @Override
     public void onCreate(SQLiteDatabase database){
-        database.execSQL("create member" + TABLE_NAME
-                +"(memberName,memberID,memberIdentity,memberPassword);");
+        database.execSQL("create table " + TABLE_NAME
+                +"(name,ID,password,identity);");
     }
 
     @Override

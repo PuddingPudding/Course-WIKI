@@ -10,7 +10,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 public class courseOpenHelper extends SQLiteOpenHelper {
 
     public courseOpenHelper(Context context){
-        super(context,"note.db",null,1);
+        super(context,"course.db",null,1);
     }
 
     public static final String TABLE_NAME = "courseTable";

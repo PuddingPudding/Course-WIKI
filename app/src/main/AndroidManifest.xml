@@ -22,7 +22,8 @@
             android:name=".MainPage"
             android:label="@string/title_activity_main_page"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".AddMemberPage"></activity>
+        <activity android:name=".AddMemberPage" />
+        <activity android:name=".MemberListPage"></activity>
     </application>
 
 </manifest>

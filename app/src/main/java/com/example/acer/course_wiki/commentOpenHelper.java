@@ -12,7 +12,7 @@ public class commentOpenHelper extends SQLiteOpenHelper
 
     public commentOpenHelper(Context context)
     {
-        super(context,"note.db",null,1);
+        super(context,"comment.db",null,1);
     }
     public static final String TABLE_NAME = "commentTable";
 
