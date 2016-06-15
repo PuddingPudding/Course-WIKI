@@ -55,6 +55,10 @@ public class AddMemberPage extends AppCompatActivity
                 //addMember會回傳這個學號(ID)是否已存在，已存在就不做事並回傳true，以下顯示學號已存在的警告訊息
                 Toast.makeText(this , R.string.ID_exist_already , Toast.LENGTH_LONG).show();
             }
+            else
+            {
+                Toast.makeText(this , "success!!" , Toast.LENGTH_LONG).show();
+            }
         }
         else
         {
