@@ -17,9 +17,9 @@ public class memberadapter extends ArrayAdapter<memberClass>
 {
     Context context;
 
-    public memberadapter(Context context, ArrayList<memberClass> matchItem)
+    public memberadapter(Context context, ArrayList<memberClass> memberItem)
     {
-        super(context , 0 , matchItem);
+        super(context , 0 , memberItem);
         this.context = context;
     }
 
@@ -38,19 +38,19 @@ public class memberadapter extends ArrayAdapter<memberClass>
             memberlayout = (LinearLayout)convertView;
         }
 
-        memberClass matchitem = (memberClass)getItem(position);
+        memberClass memberitem = (memberClass)getItem(position);
 
         TextView name = (TextView)memberlayout.findViewById(R.id.member_name);
-        name.setText(matchitem.getname());
+        name.setText(memberitem.getName());
 
         TextView ID = (TextView)memberlayout.findViewById(R.id.member_ID);
-        name.setText(matchitem.getID());
+        ID.setText(memberitem.getID());
 
         TextView password = (TextView)memberlayout.findViewById(R.id.member_password);
-        name.setText(matchitem.getpassword());
+        password.setText(memberitem.getPassword());
 
         TextView identity = (TextView)memberlayout.findViewById(R.id.member_identity);
-        name.setText(matchitem.getidentity());
+        identity.setText(memberitem.getIdentity());
 
         return memberlayout;
     }
