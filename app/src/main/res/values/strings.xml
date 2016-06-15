@@ -25,4 +25,5 @@
     <string name="blank_empty">You forget something</string>
     <string name="ID_exist_already">This ID has been used</string>
     <string name="error">ERROR!</string>
+    <string name="comment">Comment</string>
 </resources>

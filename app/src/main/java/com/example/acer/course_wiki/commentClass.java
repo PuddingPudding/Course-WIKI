@@ -7,7 +7,7 @@ public class commentClass
     private double givingRank = 0;
     private double commentCredibility = 0;
 
-    commentClass(String ID, String comment, double givingRank, double commentCredibility)
+    public commentClass(String ID, String comment, double givingRank, double commentCredibility)
     {
         this.ID = ID;
         this.comment = comment;
@@ -15,11 +15,31 @@ public class commentClass
         this.commentCredibility = commentCredibility;
     }
 
-    commentClass()
+    public commentClass()
     {
         this.ID = "";
         this.comment = "";
         this.givingRank = 0;
         this.commentCredibility = 0;
+    }
+
+    public String getID()
+    {
+        return this.ID;
+    }
+
+    public String getComment()
+    {
+        return this.comment;
+    }
+
+    public double getGivingRank()
+    {
+        return this.givingRank;
+    }
+
+    public double getCommentCredibility()
+    {
+        return this.commentCredibility;
     }
 }
