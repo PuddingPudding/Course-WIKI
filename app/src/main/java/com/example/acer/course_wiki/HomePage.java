@@ -11,6 +11,8 @@ import android.widget.Button;
 public class HomePage extends AppCompatActivity {
 
     Button logInBtn;
+    Button bt_addMember;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,6 +27,9 @@ public class HomePage extends AppCompatActivity {
         setSupportActionBar(toolbar);
         logInBtn = (Button)findViewById(R.id.BT_LogIn);
         logInBtn.setOnClickListener(goToMainPage);
+
+        bt_addMember = (Button)findViewById(R.id.BT_AddMember);
+        bt_addMember.setOnClickListener(goToAddMemberPage);
     }
 
     public View.OnClickListener goToMainPage = new View.OnClickListener()
@@ -33,6 +38,15 @@ public class HomePage extends AppCompatActivity {
         public void onClick(View v)
         {
             pageSetMainPage();
+        }
+    };
+
+    public View.OnClickListener goToAddMemberPage = new View.OnClickListener()
+    {
+        @Override
+        public void onClick(View v)
+        {
+
         }
     };
 

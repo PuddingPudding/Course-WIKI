@@ -90,4 +90,13 @@
         android:layout_below="@+id/BT_LogIn"
         android:layout_alignLeft="@+id/ET_PWDinput"
         android:layout_alignStart="@+id/ET_PWDinput" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/add_member"
+        android:id="@+id/BT_AddMember"
+        android:layout_alignBottom="@+id/BT_LogIn"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 </RelativeLayout>
