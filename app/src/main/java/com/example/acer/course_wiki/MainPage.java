@@ -1,29 +1,41 @@
 package com.example.acer.course_wiki;
 
+import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.TextView;
 
-public class MainPage extends AppCompatActivity {
+public class MainPage extends AppCompatActivity
+{
+    String ID , password;
+
+    public static memberClass nowUser;
+
+    SQLiteDatabase memberDatabase;
+
+    TextView tv_nameAndID;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_page);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+        memberOpenHelper MopenHelper = new memberOpenHelper(this);
+        memberDatabase = MopenHelper.getWritableDatabase();
+
+        Intent intent = getIntent();
+        ID = intent.getStringExtra(HomePage.ID_INPUT_KEY);
+        password = intent.getStringExtra(HomePage.PASSWORD_INPUT_KEY);
+
+        nowUser = memberDB.getMember(memberDatabase , ID , password);
+
+        tv_nameAndID = (TextView)findViewById(R.id.TV_NameAndID);
+        tv_nameAndID.setText(nowUser.getID() + " " + nowUser.getName() );
     }
 
 }
