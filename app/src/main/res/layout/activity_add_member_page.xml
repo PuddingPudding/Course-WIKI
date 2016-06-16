@@ -40,7 +40,7 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/ET_IDInput"
+        android:id="@+id/ET_IDinput"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/textView7"
         android:layout_alignParentLeft="true" />
@@ -51,7 +51,7 @@
         android:text="@string/member_password"
         android:id="@+id/textView8"
         android:textSize="35sp"
-        android:layout_below="@+id/ET_IDInput"
+        android:layout_below="@+id/ET_IDinput"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 

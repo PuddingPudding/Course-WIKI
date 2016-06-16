@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -29,7 +28,7 @@ public class AddMemberPage extends AppCompatActivity
         memberList = memberDB.getMemberList(memberDatabase);
 
         et_nameInput = (EditText)findViewById(R.id.ET_NameInput);
-        et_IDInput = (EditText)findViewById(R.id.ET_IDInput);
+        et_IDInput = (EditText)findViewById(R.id.ET_IDinput);
         et_passwordInput = (EditText)findViewById(R.id.ET_PasswordInput);
         et_identityInput = (EditText)findViewById(R.id.ET_IdentityInput);
     }

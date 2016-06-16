@@ -8,14 +8,19 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
-
-import java.lang.reflect.Member;
+import android.widget.EditText;
 
 public class HomePage extends AppCompatActivity {
 
     Button logInBtn;
     Button bt_addMember;
     Button bt_memberList;
+
+    public static final String ID_INPUT_KEY = "IDinput";
+    public static final String PASSWORD_INPUT_KEY = "passwordInput";
+
+    EditText et_IDinput;
+    EditText et_pwdInput;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +34,10 @@ public class HomePage extends AppCompatActivity {
         setContentView(R.layout.activity_home_page);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        et_IDinput = (EditText)findViewById(R.id.ET_IDinput);
+        et_pwdInput = (EditText)findViewById(R.id.ET_PWDinput);
+
         logInBtn = (Button)findViewById(R.id.BT_LogIn);
         logInBtn.setOnClickListener(goToMainPage);
 
@@ -44,7 +53,13 @@ public class HomePage extends AppCompatActivity {
         @Override
         public void onClick(View v)
         {
-            pageSetMainPage();
+            String ID = et_IDinput.getText().toString();
+            String password = et_pwdInput.getText().toString();
+
+            Intent intent = new Intent();
+            intent.setClass(HomePage.this , MainPage.class);
+            intent.putExtra(ID_INPUT_KEY , ID);
+            intent.putExtra(PASSWORD_INPUT_KEY , password);
         }
     };
 
