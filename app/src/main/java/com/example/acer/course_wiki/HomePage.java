@@ -1,6 +1,7 @@
 package com.example.acer.course_wiki;
 
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -9,6 +10,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class HomePage extends AppCompatActivity {
 
@@ -18,9 +20,13 @@ public class HomePage extends AppCompatActivity {
 
     public static final String ID_INPUT_KEY = "IDinput";
     public static final String PASSWORD_INPUT_KEY = "passwordInput";
+//    ID_INPUT_KEY代表intent噴出資料時用來標記ID(學號)的KEY
+//    PASSWORD_INPUT_KEY則代表intent噴出資料時用來標記password(密碼)的KEY
 
     EditText et_IDinput;
     EditText et_pwdInput;
+
+    SQLiteDatabase memberDatabase;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +52,9 @@ public class HomePage extends AppCompatActivity {
 
         bt_memberList = (Button)findViewById(R.id.BT_MemberList);
         bt_memberList.setOnClickListener(goToMemberListPage);
+
+        memberOpenHelper MopenHelper = new memberOpenHelper(this);
+        memberDatabase = MopenHelper.getWritableDatabase();
     }
 
     public View.OnClickListener goToMainPage = new View.OnClickListener()
@@ -56,10 +65,19 @@ public class HomePage extends AppCompatActivity {
             String ID = et_IDinput.getText().toString();
             String password = et_pwdInput.getText().toString();
 
-            Intent intent = new Intent();
-            intent.setClass(HomePage.this , MainPage.class);
-            intent.putExtra(ID_INPUT_KEY , ID);
-            intent.putExtra(PASSWORD_INPUT_KEY , password);
+            if(memberDB.getMember(memberDatabase , ID , password) == null)
+            {
+                Toast.makeText(HomePage.this , R.string.error , Toast.LENGTH_LONG).show();
+            }
+            else
+            {
+                Intent intent = new Intent();
+                intent.setClass(HomePage.this , MainPage.class);
+                intent.putExtra(ID_INPUT_KEY , ID);
+                intent.putExtra(PASSWORD_INPUT_KEY , password);
+                startActivity(intent);
+            }
+
         }
     };
 

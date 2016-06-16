@@ -15,6 +15,7 @@ public class memberDB
 
 //    靜態函數 getMemberList:會回傳所有人的資料，該資料用於檢查用
 //    靜態函數 addMember:新增member用，會回傳這個人是否已經存在，已存在則不新增並回傳true，不存則相反
+//    靜態函數 getMember:尋找member用，傳入ID(學號)跟password(密碼)，若這個人已存在，回傳這個memberClass，否則回傳null
 
     public static ArrayList<memberClass> getMemberList(SQLiteDatabase database)
     {
@@ -70,6 +71,28 @@ public class memberDB
         }
 
         return exist;
+    }
+
+    public static memberClass getMember(SQLiteDatabase database , String ID , String password)
+    {
+        memberClass member = null;
+        ArrayList<memberClass> memberList = getMemberList(database);
+        boolean exist = false; //exist代表是否已存在，先假設他不存在
+        String IDTemp = "" , passwordTemp = "";
+
+        int i = 0;
+        for(i = 0 ; i < memberList.size() && exist == false ; i++)
+        {
+            IDTemp = memberList.get(i).getID();
+            passwordTemp = memberList.get(i).getPassword();
+            if(ID.toUpperCase().equals(IDTemp) == true && password.equals(passwordTemp) == true)
+            {
+                exist = true;
+                member = memberList.get(i);
+            }
+        }
+
+        return member;
     }
 
 }
