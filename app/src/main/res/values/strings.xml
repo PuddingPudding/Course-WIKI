@@ -26,4 +26,7 @@
     <string name="ID_exist_already">This ID has been used</string>
     <string name="error">ERROR!</string>
     <string name="comment">Comment</string>
+    <string name="title_activity_course_list_page">CourseListPage</string>
+    <string name="new_course">New Course</string>
+    <string name="have_no_permission">You have no permission</string>
 </resources>

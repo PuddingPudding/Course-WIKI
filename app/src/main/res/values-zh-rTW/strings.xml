@@ -25,4 +25,6 @@
     <string name="blank_empty">尚有欄位沒填好</string>
     <string name="ID_exist_already">此學號已被用過</string>
     <string name="error">錯誤!</string>
+    <string name="new_course">新增課程</string>
+    <string name="have_no_permission">你並沒有這個權限</string>
 </resources>

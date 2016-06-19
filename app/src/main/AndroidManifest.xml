@@ -23,7 +23,11 @@
             android:label="@string/title_activity_main_page"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".AddMemberPage" />
-        <activity android:name=".MemberListPage"></activity>
+        <activity android:name=".MemberListPage" />
+        <activity
+            android:name=".CourseListPage"
+            android:label="@string/title_activity_course_list_page"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>
