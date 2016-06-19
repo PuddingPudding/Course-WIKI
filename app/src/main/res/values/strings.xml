@@ -33,4 +33,7 @@
     <string name="course_name">Course name:</string>
     <string name="course_ID">Course ID:</string>
     <string name="score">Score:</string>
+    <string name="course_teacher">teacher:</string>
+    <string name="course_Score">courseScore:</string>
+    <string name="Score">Score:</string>
 </resources>
