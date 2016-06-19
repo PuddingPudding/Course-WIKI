@@ -30,7 +30,7 @@
     <string name="new_course">New Course</string>
     <string name="have_no_permission">You have no permission</string>
     <string name="title_activity_new_course_page">NewCoursePage</string>
-    <string name="course_name">Course name</string>
-    <string name="course_ID">Course ID</string>
-    <string name="score">Score</string>
+    <string name="course_name">Course name:</string>
+    <string name="course_ID">Course ID:</string>
+    <string name="score">Score:</string>
 </resources>
