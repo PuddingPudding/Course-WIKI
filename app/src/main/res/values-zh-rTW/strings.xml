@@ -27,4 +27,7 @@
     <string name="error">錯誤!</string>
     <string name="new_course">新增課程</string>
     <string name="have_no_permission">你並沒有這個權限</string>
+    <string name="course_name">課程名稱</string>
+    <string name="course_ID">選課代碼</string>
+    <string name="score">學分數</string>
 </resources>

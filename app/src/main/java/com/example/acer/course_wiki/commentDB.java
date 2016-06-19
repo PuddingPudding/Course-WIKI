@@ -26,6 +26,7 @@ public class commentDB
         String comment = "";
         double givingRank = 0;
         double commentCredibility = 0;
+        int commentJudgedTimes = 0;
 
         int i = 0;
         for(i = 0 ; i < databasePtr.getCount() ; i++)
@@ -37,8 +38,9 @@ public class commentDB
                 comment = databasePtr.getString(databasePtr.getColumnIndex("comment") );
                 givingRank = databasePtr.getDouble(databasePtr.getColumnIndex("givingRank") );
                 commentCredibility = databasePtr.getDouble(databasePtr.getColumnIndex("commentCredibility") );
+                commentJudgedTimes = databasePtr.getInt(databasePtr.getColumnIndex("commentJudgedTimes") );
 
-                commentList.add(new commentClass(ID , comment , givingRank , commentCredibility) );
+                commentList.add(new commentClass(ID , comment , givingRank , commentCredibility , courseID , commentJudgedTimes) );
             }
             databasePtr.moveToNext();
         }

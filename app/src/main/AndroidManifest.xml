@@ -27,6 +27,10 @@
         <activity
             android:name=".CourseListPage"
             android:label="@string/title_activity_course_list_page"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".NewCoursePage"
+            android:label="@string/title_activity_new_course_page"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
