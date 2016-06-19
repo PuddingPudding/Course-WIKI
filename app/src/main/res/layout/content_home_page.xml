@@ -43,7 +43,7 @@
         android:layout_toStartOf="@+id/BT_Refresh" />
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="70sp"
         android:layout_height="wrap_content"
         android:text="@string/password"
         android:id="@+id/textView3"
@@ -51,8 +51,7 @@
         android:layout_centerVertical="true"
         android:layout_alignLeft="@+id/textView2"
         android:layout_alignStart="@+id/textView2"
-        android:layout_toStartOf="@+id/textView4"
-        android:layout_toLeftOf="@+id/textView4" />
+         />
 
     <EditText
         android:layout_width="150sp"
@@ -68,7 +67,9 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:id="@+id/ET_PWDinput"
         android:layout_alignBottom="@+id/textView3"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:inputType = "textPassword"
+        />
 
     <Button
         android:layout_width="wrap_content"

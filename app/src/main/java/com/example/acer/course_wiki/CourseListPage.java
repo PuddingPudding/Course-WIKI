@@ -1,6 +1,7 @@
 package com.example.acer.course_wiki;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -39,6 +40,12 @@ public class CourseListPage extends AppCompatActivity
             if(MainPage.nowUser.getIdentity().equals("S") == true)
             {
                 Toast.makeText(CourseListPage.this , R.string.have_no_permission , Toast.LENGTH_LONG).show();
+            }
+            else if(MainPage.nowUser.getIdentity().equals("T") == true)
+            {
+                Intent intent = new Intent();
+                intent.setClass(CourseListPage.this , NewCoursePage.class);
+                startActivity(intent);
             }
         }
     };
