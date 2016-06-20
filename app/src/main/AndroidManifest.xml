@@ -31,6 +31,10 @@
         <activity
             android:name=".NewCoursePage"
             android:label="@string/title_activity_new_course_page"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".comment_page"
+            android:label="@string/title_activity_comment_page"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

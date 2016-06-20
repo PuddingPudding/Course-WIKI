@@ -3,6 +3,7 @@ package com.example.acer.course_wiki;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
+
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -40,19 +41,6 @@ public class CourseListPage extends AppCompatActivity
 //        lv_courseList.setOnItemClickListener();
     }
 
-    @Override
-    protected  void onResume()
-    {
-        super.onResume();
-        courseOpenHelper openHelper = new courseOpenHelper(this);
-        courseDatabase = openHelper.getWritableDatabase();
-        courseList = courseDB.getCourseList(courseDatabase);
-
-        courseadapter adapter = new courseadapter(this , courseList);
-        lv_courseList.setAdapter(adapter);
-
-    }
-
     public View.OnClickListener newCourse = new View.OnClickListener()
     {
         @Override
@@ -62,15 +50,6 @@ public class CourseListPage extends AppCompatActivity
             {
                 Toast.makeText(CourseListPage.this , R.string.have_no_permission , Toast.LENGTH_LONG).show();
             }
-            else if(MainPage.nowUser.getIdentity().equals("T") == true)
-            {
-                Intent intent = new Intent();
-                intent.setClass(CourseListPage.this , NewCoursePage.class);
-                startActivity(intent);
-            }
         }
     };
-
-    public AdapterView.OnItemClickListener goToComment
-
 }
