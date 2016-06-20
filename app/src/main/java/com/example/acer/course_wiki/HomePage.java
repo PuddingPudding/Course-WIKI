@@ -75,6 +75,8 @@ public class HomePage extends AppCompatActivity {
                 intent.setClass(HomePage.this , MainPage.class);
                 intent.putExtra(ID_INPUT_KEY , ID);
                 intent.putExtra(PASSWORD_INPUT_KEY , password);
+                et_pwdInput.setText("");
+                et_IDinput.setText("");
                 startActivity(intent);
             }
 

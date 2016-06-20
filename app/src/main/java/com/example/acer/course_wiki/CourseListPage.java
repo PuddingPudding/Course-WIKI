@@ -47,6 +47,8 @@ public class CourseListPage extends AppCompatActivity
         courseDatabase = openHelper.getWritableDatabase();
         courseList = courseDB.getCourseList(courseDatabase);
 
+        courseadapter adapter = new courseadapter(this , courseList);
+        lv_courseList.setAdapter(adapter);
 
     }
 
