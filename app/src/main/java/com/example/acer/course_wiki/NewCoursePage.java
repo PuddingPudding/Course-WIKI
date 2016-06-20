@@ -1,6 +1,7 @@
 package com.example.acer.course_wiki;
 
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -10,11 +11,16 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+
 public class NewCoursePage extends AppCompatActivity
 {
     EditText et_courseName;
     EditText et_courseID;
     EditText et_score;
+
+    SQLiteDatabase courseDatabase;
+    ArrayList<courseClass> courseList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -23,6 +29,11 @@ public class NewCoursePage extends AppCompatActivity
         setContentView(R.layout.activity_new_course_page);
 
         Intent intent = getIntent();
+
+        courseOpenHelper openHelper = new courseOpenHelper(this);
+        courseDatabase = openHelper.getWritableDatabase();
+
+        courseList = courseDB.getCourseList(courseDatabase);
 
         et_courseName = (EditText)findViewById(R.id.ET_CourseName);
         et_courseID = (EditText)findViewById(R.id.ET_CourseID);
@@ -49,7 +60,16 @@ public class NewCoursePage extends AppCompatActivity
             }
             else
             {
-
+                boolean flag = courseDB.addCourse(courseDatabase , courseName , courseID , 0 , MainPage.nowUser.getName() , score);
+                if(flag == true)
+                {
+                    //anddCourse這個函數會回傳該選課代碼是否已存在，已存在則不做事並回傳true
+                    Toast.makeText(this , R.string.ID_exist_already , Toast.LENGTH_LONG).show();
+                }
+                else
+                {
+                    Toast.makeText(this , "success!!" , Toast.LENGTH_LONG).show();
+                }
             }
         }
     }

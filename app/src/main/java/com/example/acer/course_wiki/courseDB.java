@@ -44,7 +44,18 @@ public class courseDB
     public static boolean addCourse(SQLiteDatabase database , String courseName , String courseID , double courseScore , String teacher , int score)
     {
         boolean exist = false; //exist代表是否已存在，先假設他不存在
+        ArrayList<courseClass> courseList = getCourseList(database);
+        String courseIDtemp = "";
 
+        int i = 0;
+        for(i = 0 ; i < courseList.size() && exist == false ; i++)
+        {
+            courseIDtemp = courseList.get(i).getCourseID();
+            if(courseID.equals(courseIDtemp) == true)
+            {
+                exist = true;
+            }
+        }
 
         if(exist == false)
         {
