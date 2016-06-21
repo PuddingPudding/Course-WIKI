@@ -1,5 +1,6 @@
 package com.example.acer.course_wiki;
 
+import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
@@ -14,6 +15,31 @@ public class commentDB
 
 //    靜態函數 getCommentList:獲得一串資料，這一串資料用於顯示評論時使用
 
+    public static void addComment(SQLiteDatabase database , String courseID , String comment , double givingRank)
+    {
+        ContentValues input = new ContentValues();
+        input.put("ID", MainPage.nowUser.getID());
+        input.put("courseID", courseID.toUpperCase());
+        input.put("givingRank", givingRank);
+        input.put("commentCredibility", 0);
+        input.put("comment", comment);
+        input.put("commentJudgedTimes" , 0);
+
+        database.insert(TABLE_NAME , null , input);
+    }
+
+    public static void update(SQLiteDatabase database , String ID , String courseID , double givingRank , double commentCredibility , String comment , int commentJudgedTimes)
+    {
+        ContentValues input = new ContentValues();
+        input.put("ID", ID );
+        input.put("courseID", courseID.toUpperCase() );
+        input.put("givingRank", givingRank);
+        input.put("commentCredibility", commentCredibility);
+        input.put("comment", comment);
+        input.put("commentJudgedTimes" , commentJudgedTimes);
+
+        database.update(TABLE_NAME , input , "ID='" + ID + "'AND courseID='" + courseID + "'" , null);
+    }
 
     public static ArrayList<commentClass> getCommentList(SQLiteDatabase database , String courseID)
     {
@@ -47,4 +73,5 @@ public class commentDB
 
         return commentList;
     }
+
 }

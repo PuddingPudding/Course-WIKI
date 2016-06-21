@@ -71,4 +71,68 @@ public class courseDB
 
         return exist;
     }
+
+    public static void courseUpdate(SQLiteDatabase database , ArrayList<commentClass> commentList)
+    {
+        if(commentList.size() > 0)
+        {
+            int i = 0 , counter = 0;
+            double sum = 0;
+            for(i = 0 ; i < commentList.size() ; i++)
+            {
+                if(commentList.get(i).getCommentCredibility() > 4)
+                {
+//                只取可信度>4的評分
+                    counter++;
+                    sum += commentList.get(i).getGivingRank();
+                }
+            }
+            sum = sum / counter;
+
+            ArrayList<courseClass> courseList = getCourseList(database);
+            Cursor databasePtr = database.rawQuery("select * from " + TABLE_NAME , null);
+            databasePtr.moveToFirst();
+            boolean exist = false;
+            String strTemp , commentCourseID;
+
+            for(i = 0 ; i < courseList.size() && exist ==false ; i++)
+            {
+                strTemp = databasePtr.getString(databasePtr.getColumnIndex("courseID"));
+                commentCourseID = commentList.get(0).getCourseID();
+                if(strTemp.equals(commentCourseID) == true)
+                {
+                    exist = true;
+                    ContentValues input = new ContentValues();
+                    input.put("courseName" , databasePtr.getString(databasePtr.getColumnIndex("courseName") ) );
+                    input.put("courseID" , databasePtr.getString(databasePtr.getColumnIndex("courseID") ) );
+                    input.put("courseScore" , sum);
+                    input.put("teacher" , databasePtr.getString(databasePtr.getColumnIndex("teacher") ) );
+                    input.put("score" , databasePtr.getInt(databasePtr.getColumnIndex("score") ) );
+
+                    database.update(TABLE_NAME , input , "courseID='" + commentCourseID + "'" , null);
+                }
+                else
+                {
+                    databasePtr.moveToNext();
+                }
+            }
+        }
+    }
+
+    public static void courseUpdate(SQLiteDatabase courseDatabase , SQLiteDatabase commentDatabase)
+    {
+        ArrayList<courseClass> courseList = getCourseList(courseDatabase);
+        ArrayList<commentClass> commentList;
+        Cursor databasePtr = courseDatabase.rawQuery("select * from " + TABLE_NAME , null);
+        databasePtr.moveToFirst();
+        String strTemp;
+
+        int i = 0;
+        for(i = 0 ; i < courseList.size() ; i++)
+        {
+            strTemp = courseList.get(i).getCourseID();
+            commentList = commentDB.getCommentList(commentDatabase , strTemp);
+            courseUpdate(courseDatabase , commentList);
+        }
+    }
 }

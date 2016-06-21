@@ -27,6 +27,10 @@ public class CourseListPage extends AppCompatActivity
     ArrayList<courseClass> courseList;
 
     SQLiteDatabase courseDatabase;
+    SQLiteDatabase commentDatabase;
+
+    public static final String POSITION_KEY = "position_key";
+    public static final String TEACHER_KEY = "teacher_key";
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -38,7 +42,24 @@ public class CourseListPage extends AppCompatActivity
         bt_newCourse.setOnClickListener(newCourse);
 
         lv_courseList = (ListView)findViewById(R.id.LV_CourseList);
-//        lv_courseList.setOnItemClickListener();
+        lv_courseList.setOnItemClickListener(goToCommentListPage);
+    }
+
+    @Override
+    protected void onResume()
+    {
+        super.onResume();
+
+        courseOpenHelper openHelper = new courseOpenHelper(this);
+        courseDatabase = openHelper.getWritableDatabase();
+        commentOpenHelper CMopenHelper = new commentOpenHelper(this);
+        commentDatabase = CMopenHelper.getWritableDatabase();
+
+        courseDB.courseUpdate(courseDatabase , commentDatabase);
+        courseList = courseDB.getCourseList(courseDatabase);
+
+        courseadapter adapter = new courseadapter(this , courseList);
+        lv_courseList.setAdapter(adapter);
     }
 
     public View.OnClickListener newCourse = new View.OnClickListener()
@@ -50,6 +71,26 @@ public class CourseListPage extends AppCompatActivity
             {
                 Toast.makeText(CourseListPage.this , R.string.have_no_permission , Toast.LENGTH_LONG).show();
             }
+            else
+            {
+                Intent intent = new Intent();
+                intent.setClass(CourseListPage.this , NewCoursePage.class);
+                startActivity(intent);
+            }
         }
     };
+
+    public AdapterView.OnItemClickListener goToCommentListPage = new AdapterView.OnItemClickListener()
+    {
+        @Override
+        public void onItemClick(AdapterView<?> parent, View view, int position, long id)
+        {
+            Intent intent = new Intent();
+            intent.setClass(CourseListPage.this , comment_page.class);
+            intent.putExtra(POSITION_KEY , position);
+            startActivity(intent);
+
+        }
+    };
+
 }

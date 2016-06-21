@@ -1,7 +1,6 @@
 <resources>
     <string name="app_name">Course-WIKI</string>
     <string name="action_settings">Settings</string>
-    <string name="new_comment">New Comment</string>
     <string name="log_in">Log in</string>
     <string name="ID">ID</string>
     <string name="password">Password</string>
@@ -34,4 +33,14 @@
     <string name="course_name">Course name</string>
     <string name="course_ID">Course ID</string>
     <string name="score">Score</string>
+    <string name="new_comment">New comment</string>
+    <string name="teacher">Teacher</string>
+    <string name="course_score">Course score</string>
+    <string name="title_activity_comment_page"></string>
+    <string name="title_activity_new_comment_page">NewCommentPage</string>
+    <string name="giving_rank_0to10">Giving rank(from 0~10)</string>
+    <string name="giving_rank">Giving rank</string>
+    <string name="title_activity_comment_judge">CommentJudge</string>
+    <string name="comment_credibility_0to10">Comment credibility(0~10)</string>
+    <string name="already_comment">Your already comment</string>
 </resources>

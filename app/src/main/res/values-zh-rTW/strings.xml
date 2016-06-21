@@ -30,4 +30,9 @@
     <string name="course_name">課程名稱</string>
     <string name="course_ID">選課代碼</string>
     <string name="score">學分數</string>
+    <string name="course_score">課程評價</string>
+    <string name="giving_rank">給予評分</string>
+    <string name="giving_rank_0to10">給予評分(0~10)</string>
+    <string name="comment_credibility_0to10">評論可信度(0~10)</string>
+    <string name="already_comment">你已經寫過評論了</string>
 </resources>

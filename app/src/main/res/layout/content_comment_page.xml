@@ -16,21 +16,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/LV_CommentListpage"
-        android:layout_below="@id/teachername"></ListView>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="20sp"
-        android:id="@+id/teachername"
-        android:layout_below="@id/thiscoursename"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="20sp"
-        android:id="@+id/thiscoursename"
-        android:layout_below="@id/BT_NewComment"/>
+        android:layout_below="@+id/TV_Teacher"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="40dp"/>
 
 
     <Button
@@ -46,10 +35,64 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/app_name"
-        android:id="@+id/BT_Refreshcomment"
+        android:id="@+id/BT_Refresh"
         android:textSize="25sp"
         android:layout_alignBottom="@+id/BT_NewCourse"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New Text"
+        android:id="@+id/TV_CourseName"
+        android:textSize="20sp"
+        android:layout_below="@+id/BT_Refresh"
+        android:layout_toLeftOf="@+id/BT_NewComment"
+        android:layout_toStartOf="@+id/BT_NewComment" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New Text"
+        android:id="@+id/TV_CourseID"
+        android:textSize="20sp"
+        android:layout_below="@+id/TV_CourseName"
+        android:layout_alignLeft="@+id/TV_CourseName"
+        android:layout_alignStart="@+id/TV_CourseName" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/course_name"
+        android:id="@+id/textView4"
+        android:layout_below="@+id/BT_Refresh"
+        android:textSize="20sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/course_ID"
+        android:id="@+id/textView13"
+        android:layout_below="@+id/textView4"
+        android:textSize="20sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/teacher"
+        android:id="@+id/textView14"
+        android:layout_below="@+id/textView13"
+        android:textSize="20sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New Text"
+        android:id="@+id/TV_Teacher"
+        android:textSize="20sp"
+        android:layout_below="@+id/TV_CourseID"
+        android:layout_alignLeft="@+id/TV_CourseID"
+        android:layout_alignStart="@+id/TV_CourseID" />
 
 </RelativeLayout>

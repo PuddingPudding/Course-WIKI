@@ -35,6 +35,14 @@
         <activity
             android:name=".comment_page"
             android:label="@string/title_activity_comment_page"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".NewCommentPage"
+            android:label="@string/title_activity_new_comment_page"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".CommentJudge"
+            android:label="@string/title_activity_comment_judge"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
